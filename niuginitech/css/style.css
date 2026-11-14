@@ -92,10 +92,6 @@ header {
 
 .navbar {
   min-height: 82px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
 }
 
 @media(max-width: 700px) {
@@ -109,14 +105,14 @@ header {
   justify-content: space-between;
   width: min(1140px, 90%);
   margin: auto;
+  height: 82px;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 30px;
-  margin-left: auto; /* Pushes the nav links cleanly to the right without forcing a massive fixed gap */
+  gap: 25px;
 }
 
 .brand {
