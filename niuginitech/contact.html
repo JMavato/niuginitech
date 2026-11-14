@@ -330,38 +330,58 @@
   document.getElementById("year").textContent =
     new Date().getFullYear();
 
-  // Contact form email preparation
-  document.getElementById("contactForm").addEventListener("submit", function(event) {
+  
+/* NIUGINI TECH - CONTACT FORM EMAIL PREPARATION */
 
-    event.preventDefault();
+const contactForm = document.getElementById("contactForm");
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const service = document.getElementById("service").value;
-    const message = document.getElementById("message").value.trim();
+if (contactForm) {
 
-    if (!name || !email || !service || !message) {
-      alert("Please complete all required fields.");
-      return;
-    }
+    contactForm.addEventListener("submit", function(event) {
 
-    const subject = encodeURIComponent(
-      "Website Enquiry - " + service
-    );
+        event.preventDefault();
 
-    const body = encodeURIComponent(
-      "New Enquiry - Niugini Tech\n\n" +
-      "Name: " + name + "\n" +
-      "Email: " + email + "\n" +
-      "Service Required: " + service + "\n\n" +
-      "Message:\n" + message
-    );
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
+            return;
+        }
 
-    window.location.href =
-      "mailto:info@niuginitech.com?subject=" +
-      subject + "&body=" + body;
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const service = document.getElementById("service").value;
+        const message = document.getElementById("message").value.trim();
+        const status = document.getElementById("formStatus");
 
-  });
+        const subject = "Website Enquiry - " + service;
+
+        const body =
+            "NEW WEBSITE ENQUIRY - NIUGINI TECH\n\n" +
+            "CUSTOMER DETAILS\n" +
+            "------------------------------\n" +
+            "Full Name: " + name + "\n" +
+            "Email Address: " + email + "\n" +
+            "Phone Number: " + (phone || "Not provided") + "\n" +
+            "Service Required: " + service + "\n\n" +
+            "MESSAGE\n" +
+            "------------------------------\n" +
+            message + "\n\n" +
+            "------------------------------\n" +
+            "Sent through the Niugini Tech website.";
+
+        const mailtoLink =
+            "mailto:jjmjeremy20@gmail.com" +
+            "?subject=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(body);
+
+        status.textContent =
+            "Opening your email application. Please review your enquiry and press Send.";
+
+        window.location.href = mailtoLink;
+
+    });
+
+}
 
 </script>
 
