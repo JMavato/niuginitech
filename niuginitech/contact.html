@@ -197,73 +197,92 @@
 
         </div>
 
+ 
         <!-- ENQUIRY FORM -->
-        <div>
-
-          <h2>Send an Enquiry</h2>
-
-          <p style="color:var(--muted);font-size:14px">
-            Complete the details below. Your email application
-            will open with your enquiry ready to send.
-          </p>
-
-          <form class="contact-form" id="contactForm">
-
-            <label for="name">Full Name *</label>
-            <input id="name"
-                   name="name"
-                   type="text"
-                   autocomplete="name"
-                   required
-                   placeholder="Enter your name">
-
-            <label for="email">Email Address *</label>
-            <input id="email"
-                   name="email"
-                   type="email"
-                   autocomplete="email"
-                   required
-                   placeholder="Enter your email">
-
-            <label for="service">Service Required *</label>
-            <select id="service" name="service" required>
-              <option value="">Select a service</option>
-              <option>IT Support & Troubleshooting</option>
-              <option>Networking & Connectivity</option>
-              <option>CCTV & Security Systems</option>
-              <option>Starlink Installation</option>
-              <option>PTP Installation & Configuration</option>
-              <option>Computers & IT Equipment</option>
-              <option>Website Design & Development</option>
-              <option>Domain Registration & Hosting</option>
-              <option>Business Email Setup</option>
-              <option>Business IT Support</option>
-              <option>Other Enquiry</option>
-            </select>
-
-            <label for="message">Your Message *</label>
-              <textarea id="message"
-                        name="message"
-                        required
-                        placeholder="Tell us how we can help..."></textarea>
-              
-                        <button type="button" onclick="prepareEmail()" class="btn btn-primary">
-              Prepare Email
-              <i class="fas fa-paper-plane"></i>
-            </button>
-
-          </form>
-
-          <!-- RESPONSE COMMITMENT -->
-          <p style="color:var(--muted);font-size:14px;margin-top:15px;line-height:1.7">
-            <i class="fas fa-info-circle"></i>
-            We aim to respond to all enquiries within one business day.
-            For urgent assistance, please contact us directly by phone
-            or WhatsApp.
-          </p>
-
+        <div class="enquiry-wrapper">
+        
+            <h2>Send an Enquiry</h2>
+        
+            <p class="enquiry-intro">
+                Complete the form below and send your enquiry directly
+                to our team. We'll be happy to assist you.
+            </p>
+        
+            <form class="contact-form" id="contactForm">
+        
+                <label for="name">Full Name *</label>
+                <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    required
+                    maxlength="100"
+                    placeholder="Enter your full name"
+                >
+        
+                <label for="email">Email Address *</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    maxlength="150"
+                    placeholder="Enter your email address"
+                >
+        
+                <label for="phone">Phone Number</label>
+                <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    maxlength="30"
+                    placeholder="Enter your contact number"
+                >
+        
+                <label for="service">Service Required *</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="IT Support & Troubleshooting">IT Support & Troubleshooting</option>
+                    <option value="Networking & Connectivity">Networking & Connectivity</option>
+                    <option value="CCTV & Security Systems">CCTV & Security Systems</option>
+                    <option value="Starlink Installation">Starlink Installation</option>
+                    <option value="PTP Installation & Configuration">PTP Installation & Configuration</option>
+                    <option value="Computers & IT Equipment">Computers & IT Equipment</option>
+                    <option value="Website Design & Development">Website Design & Development</option>
+                    <option value="Domain Registration & Hosting">Domain Registration & Hosting</option>
+                    <option value="Business Email Setup">Business Email Setup</option>
+                    <option value="Business IT Support">Business IT Support</option>
+                    <option value="Other Enquiry">Other Enquiry</option>
+                </select>
+        
+                <label for="message">Your Message *</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    required
+                    maxlength="3000"
+                    placeholder="Tell us about your requirements..."
+                ></textarea>
+        
+                <button class="btn btn-primary" type="submit">
+                    Prepare Email
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+        
+                <p id="formStatus" class="form-status" role="status" aria-live="polite">
+                    <i class="fas fa-lock"></i>
+                    Your enquiry details will be prepared for your email application.
+                </p>
+        
+            </form>
+        
         </div>
-
+        
+        
       </div>
     </div>
   </section>
@@ -346,27 +365,6 @@
 
 </script>
 
-
-
-  <script>
-function prepareEmail() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const service = document.getElementById('service').value;
-    const message = document.getElementById('message').value;
-
-    // Basic validation
-    if (!name || !email || !service || !message) {
-        alert('Please fill out all required fields before preparing the email.');
-        return;
-    }
-
-    const subject = encodeURIComponent(`New Enquiry: ${service} - ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`);
-
-    window.location.href = `mailto:jjmjeremy20@gmail.com?subject=${subject}&body=${body}`;
-}
-</script>
 
 <script src="js/script.js"></script>
 
