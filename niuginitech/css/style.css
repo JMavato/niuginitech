@@ -154,12 +154,6 @@ header {
   margin-top: 5px;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  align-items: center;
-  gap: 27px;
-}
 
 .nav-links a {
   font-size: 13px;
