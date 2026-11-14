@@ -92,6 +92,8 @@ header {
 
 .navbar {
   min-height: 82px;
+  display: flex;
+  align-items: center;
 }
 
 @media(max-width: 700px) {
@@ -105,7 +107,7 @@ header {
   justify-content: space-between;
   width: min(1140px, 90%);
   margin: auto;
-  height: 82px;
+  flex-wrap: nowrap;
 }
 
 .nav-links {
@@ -113,6 +115,8 @@ header {
   list-style: none;
   align-items: center;
   gap: 25px;
+  margin-left: auto;
+  flex-wrap: nowrap;
 }
 
 .brand {
