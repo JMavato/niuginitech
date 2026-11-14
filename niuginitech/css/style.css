@@ -82,16 +82,17 @@ a { text-decoration: none; color: inherit; }
     gap: 12px;
   }
 }
+
 header {
   background: white;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0,0,0,.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 .navbar {
-  min-height: 82px;
+  height: 82px;
   display: flex;
   align-items: center;
 }
@@ -107,15 +108,15 @@ header {
   justify-content: space-between;
   width: min(1140px, 90%);
   margin: auto;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; /* Ensures items never wrap to a new line */
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 25px;
-  margin-left: auto;
+  gap: 30px;
+  margin-left: auto; /* Keeps them neatly aligned to the right side */
   flex-wrap: nowrap;
 }
 
