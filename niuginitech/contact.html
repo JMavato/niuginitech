@@ -247,10 +247,10 @@
                         required
                         placeholder="Tell us how we can help..."></textarea>
               
-              <a href="mailto:jjmjeremy20@gmail.com" class="btn btn-primary">
-                  Prepare Email
-                  <i class="fas fa-paper-plane"></i>
-            </a>
+                        <button type="button" onclick="prepareEmail()" class="btn btn-primary">
+              Prepare Email
+              <i class="fas fa-paper-plane"></i>
+            </button>
 
           </form>
 
@@ -344,6 +344,28 @@
 
   });
 
+</script>
+
+// contact form validation
+
+  <script>
+function prepareEmail() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+
+    // Basic validation
+    if (!name || !email || !service || !message) {
+        alert('Please fill out all required fields before preparing the email.');
+        return;
+    }
+
+    const subject = encodeURIComponent(`New Enquiry: ${service} - ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`);
+
+    window.location.href = `mailto:jjmjeremy20@gmail.com?subject=${subject}&body=${body}`;
+}
 </script>
 
 <script src="js/script.js"></script>
