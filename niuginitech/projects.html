@@ -1,0 +1,1014 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Projects | Niugini Tech - IT & Technology Solutions PNG</title>
+
+    <meta name="description" content="Explore Niugini Tech project work in CCTV installation, Starlink setup, PTP wireless links, networking, Wi-Fi, computer support and website development in Papua New Guinea.">
+
+    <meta name="keywords" content="Niugini Tech Projects, CCTV Installation Papua New Guinea, Starlink Installation PNG, PTP Installation PNG, Network Cabling Port Moresby, Wireless Connectivity, IT Support PNG, Website Development PNG">
+
+    <meta name="author" content="Niugini Tech">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Our Projects | Niugini Tech">
+    <meta property="og:description" content="Explore Niugini Tech's technology projects and installation work in Papua New Guinea.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.png">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* =========================
+           PROJECTS PAGE
+        ========================= */
+
+        .projects-banner {
+            background: linear-gradient(120deg, #0B3C5D, #1D2731);
+            color: #fff;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .projects-banner h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 15px;
+        }
+
+        .projects-banner p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            color: #e5eaf0;
+        }
+
+        .projects-intro {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 35px;
+        }
+
+        .projects-intro p {
+            line-height: 1.8;
+        }
+
+        /* PROJECT FILTERS */
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 30px 0 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 1px solid #328CC1;
+            border-radius: 30px;
+            background: #fff;
+            color: #0B3C5D;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #0B3C5D;
+            color: #fff;
+        }
+
+        .filter-btn:focus-visible,
+        .project-image:focus-visible {
+            outline: 3px solid #D9B310;
+            outline-offset: 3px;
+        }
+
+        /* PROJECT GRID */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 0;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-card[hidden] {
+            display: none !important;
+        }
+
+        /* IMAGE SLIDESHOW */
+
+        .project-slideshow {
+            position: relative;
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+            background: #e9eef2;
+        }
+
+        .project-slideshow .project-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            cursor: zoom-in;
+        }
+
+        .project-slideshow .project-image.active {
+            opacity: 1;
+        }
+
+        .project-card > .project-image {
+            display: block;
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            cursor: zoom-in;
+            background: #e9eef2;
+        }
+
+        /* PROJECT INFORMATION */
+
+        .project-info {
+            padding: 22px;
+        }
+
+        .project-category {
+            display: inline-block;
+            color: #328CC1;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .project-info h3 {
+            color: #0B3C5D;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .project-info p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .project-details {
+            border-top: 1px solid #e8edf1;
+            padding-top: 13px;
+            margin-top: 14px;
+        }
+
+        .project-details p {
+            margin-bottom: 7px;
+            font-size: 13px;
+        }
+
+        .project-details strong {
+            color: #1D2731;
+        }
+
+        /* TECHNOLOGY TAGS */
+
+        .technology-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 15px;
+        }
+
+        .technology-tags span {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #eef5f9;
+            color: #0B3C5D;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #0B3C5D;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            color: #328CC1;
+        }
+
+        /* PROJECT CTA */
+
+        .projects-cta {
+            background: #0B3C5D;
+            color: #fff;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .projects-cta h2 {
+            margin-bottom: 15px;
+        }
+
+        .projects-cta p {
+            max-width: 680px;
+            margin: 0 auto 25px;
+            line-height: 1.8;
+        }
+
+        .projects-cta .btn {
+            margin: 6px;
+        }
+
+        /* IMAGE LIGHTBOX */
+
+        .image-lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .image-lightbox.open {
+            display: flex;
+        }
+
+        .image-lightbox img {
+            max-width: 95%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 28px;
+            background: transparent;
+            color: #fff;
+            border: none;
+            font-size: 42px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: #D9B310;
+        }
+
+        body.lightbox-open {
+            overflow: hidden;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-banner {
+                padding: 65px 18px;
+            }
+
+            .project-slideshow,
+            .project-card > .project-image {
+                height: 220px;
+            }
+
+            .filter-btn {
+                padding: 9px 15px;
+                font-size: 13px;
+            }
+
+            .project-info {
+                padding: 19px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .project-card,
+            .project-slideshow .project-image,
+            .filter-btn {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+  <div class="container">
+
+    <div class="contact-info">
+      <span>
+        <i class="fas fa-phone"></i>
+        <a href="tel:+67571623719">+675 7162 3719</a>
+      </span>
+
+      <span>
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:info@niuginitech.com">info@niuginitech.com</a>
+      </span>
+    </div>
+
+    <span>
+      <i class="fas fa-location-dot"></i>
+      Port Moresby, Papua New Guinea
+    </span>
+
+  </div>
+</div>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar container">
+
+            <a class="brand" href="index.html">
+                <img src="images/logo.png"
+                     alt="Niugini Tech Logo"
+                     class="brand-logo">
+
+                <span>
+                    <span class="brand-name">
+                        NIUGINI <span>TECH</span>
+                    </span>
+
+                    <span class="brand-tagline">
+                        CONNECTING BUSINESS THROUGH TECHNOLOGY
+                    </span>
+                </span>
+            </a>
+
+            <button class="menu-toggle"
+                    aria-label="Toggle menu"
+                    aria-expanded="false"
+                    type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a class="active" href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- PAGE BANNER -->
+    <section class="projects-banner">
+        <div class="container">
+
+            <span class="section-label">Our Portfolio</span>
+
+            <h1>Our Projects & Completed Work</h1>
+
+            <p>
+                Explore Niugini Tech's technology project work, from CCTV
+                security installations and Starlink connectivity to wireless
+                networking, structured cabling, IT support and website development.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- PROJECT GALLERY -->
+    <section class="light-section">
+        <div class="container">
+
+            <div class="section-heading projects-intro">
+                <span class="section-label">Our Work</span>
+
+                <h2>Explore Our Projects</h2>
+
+                <p>
+                    Discover the solutions we deliver through practical
+                    installations, technical support and technology
+                    implementation. Select a category to explore our work.
+                </p>
+            </div>
+
+            <!-- PROJECT FILTERS -->
+            <div class="project-filters" aria-label="Filter projects">
+
+                <button class="filter-btn active"
+                        type="button"
+                        data-filter="all"
+                        aria-pressed="true">
+                    All Projects
+                </button>
+
+                <button class="filter-btn"
+                        type="button"
+                        data-filter="cctv"
+                        aria-pressed="false">
+                    CCTV
+                </button>
+
+                <button class="filter-btn"
+                        type="button"
+                        data-filter="starlink"
+                        aria-pressed="false">
+                    Starlink
+                </button>
+
+                <button class="filter-btn"
+                        type="button"
+                        data-filter="ptp"
+                        aria-pressed="false">
+                    PTP Installation
+                </button>
+
+                <button class="filter-btn"
+                        type="button"
+                        data-filter="networking"
+                        aria-pressed="false">
+                    Networking
+                </button>
+
+                <button class="filter-btn"
+                        type="button"
+                        data-filter="it"
+                        aria-pressed="false">
+                    IT Support
+                </button>
+
+                <button class="filter-btn"
+                        type="button"
+                        data-filter="website"
+                        aria-pressed="false">
+                    Website Development
+                </button>
+
+            </div>
+
+            <!-- PROJECT CARDS -->
+            <div class="projects-grid">
+
+                <!-- CCTV PROJECT -->
+                <article class="project-card" data-category="cctv">
+
+                    <div class="project-slideshow">
+                        <img src="images/projects/cctv-installation.jpg"
+                             alt="CCTV installation project by Niugini Tech"
+                             loading="lazy"
+                             class="project-image active">
+
+                        <img src="images/projects/cctv-installation-2.jpg"
+                             alt="Additional CCTV installation work"
+                             loading="lazy"
+                             class="project-image">
+
+                        <img src="images/projects/cctv-installation-3.jpg"
+                             alt="CCTV security installation at a tower site"
+                             loading="lazy"
+                             class="project-image">
+                    </div>
+
+                    <div class="project-info">
+                        <span class="project-category">CCTV Installation</span>
+
+                        <h3>CCTV Security Systems</h3>
+
+                        <p>
+                            CCTV installation work for telecommunications
+                            infrastructure, including Vodafone PNG tower
+                            site environments. The work focuses on
+                            surveillance coverage and site security.
+                        </p>
+
+                        <div class="project-details">
+                            <p><strong>Location:</strong> Project site, Vodafone PNG Basestations</p>
+                            <p><strong>Scope:</strong> CCTV installation, equipment setup and configuration</p>
+                            <p><strong>Purpose:</strong> Site surveillance and security monitoring</p>
+                        </div>
+
+                        <div class="technology-tags">
+                            <span>CCTV Systems</span>
+                            <span>Surveillance</span>
+                            <span>Installation</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- STARLINK PROJECT -->
+                <article class="project-card" data-category="starlink">
+
+                    <div class="project-slideshow">
+                        <img src="images/projects/starlink-installation.jpg"
+                             alt="Starlink satellite internet installation"
+                             loading="lazy"
+                             class="project-image active">
+
+                        <img src="images/projects/starlink-installation-2.jpg"
+                             alt="Starlink equipment installation"
+                             loading="lazy"
+                             class="project-image">
+
+                        <img src="images/projects/starlink-installation-3.jpg"
+                             alt="Starlink satellite connectivity setup"
+                             loading="lazy"
+                             class="project-image">
+                    </div>
+
+                    <div class="project-info">
+                        <span class="project-category">Starlink Installation</span>
+
+                        <h3>Satellite Internet Setup</h3>
+
+                        <p>
+                            Starlink installation and configuration,
+                            covering equipment positioning, setup and
+                            connectivity testing for satellite internet access.
+                        </p>
+
+                        <div class="project-details">
+                            <p><strong>Location:</strong> Project site, Southern Cross University-IBSU</p>
+                            <p><strong>Scope:</strong> Dish positioning, equipment setup and configuration</p>
+                            <p><strong>Purpose:</strong> Satellite internet connectivity</p>
+                        </div>
+
+                        <div class="technology-tags">
+                            <span>Starlink</span>
+                            <span>Satellite Internet</span>
+                            <span>Networking</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- PTP PROJECT -->
+                <article class="project-card" data-category="ptp">
+
+                    <div class="project-slideshow">
+                        <img src="images/projects/ptp-installation.jpg"
+                             alt="Point-to-point wireless installation"
+                             loading="lazy"
+                             class="project-image active">
+
+                        <img src="images/projects/ptp-installation-2.jpg"
+                             alt="Wireless point-to-point equipment setup"
+                             loading="lazy"
+                             class="project-image">
+
+                        <img src="images/projects/ptp-installation-3.jpg"
+                             alt="Point-to-point wireless link installation"
+                             loading="lazy"
+                             class="project-image">
+                    </div>
+
+                    <div class="project-info">
+                        <span class="project-category">PTP Installation</span>
+
+                        <h3>Point-to-Point Connectivity</h3>
+
+                        <p>
+                            Wireless point-to-point installation and
+                            configuration to establish connectivity between
+                            separate locations where a suitable wireless
+                            link is required.
+                        </p>
+
+                        <div class="project-details">
+                            <p><strong>Location:</strong> Project site, PNG</p>
+                            <p><strong>Scope:</strong> Wireless equipment installation and link configuration</p>
+                            <p><strong>Purpose:</strong> Connectivity between locations</p>
+                        </div>
+
+                        <div class="technology-tags">
+                            <span>PTP Wireless</span>
+                            <span>Radio Links</span>
+                            <span>Networking</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- NETWORKING PROJECT -->
+                <article class="project-card" data-category="networking">
+
+                    <img src="images/projects/networking.jpg"
+                         alt="Network installation and structured cabling work"
+                         loading="lazy"
+                         class="project-image">
+
+                    <div class="project-info">
+                        <span class="project-category">Networking</span>
+
+                        <h3>Network & Structured Cabling</h3>
+
+                        <p>
+                            Network infrastructure work involving LAN
+                            setup, router configuration, structured cabling
+                            and connectivity arrangements for business environments.
+                        </p>
+
+                        <div class="project-details">
+                            <p><strong>Location:</strong> Port Moresby / project site</p>
+                            <p><strong>Scope:</strong> LAN setup, cabling and router configuration</p>
+                            <p><strong>Purpose:</strong> Business network connectivity</p>
+                        </div>
+
+                        <div class="technology-tags">
+                            <span>LAN</span>
+                            <span>Structured Cabling</span>
+                            <span>Router Configuration</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- WIFI PROJECT -->
+                <article class="project-card" data-category="networking">
+
+                    <img src="images/projects/wifi-installation.jpg"
+                         alt="Wireless Wi-Fi access point installation"
+                         loading="lazy"
+                         class="project-image">
+
+                    <div class="project-info">
+                        <span class="project-category">Wireless Connectivity</span>
+
+                        <h3>Wi-Fi Network Solutions</h3>
+
+                        <p>
+                            Wireless access point installation and
+                            configuration to support Wi-Fi coverage,
+                            device connectivity and network access.
+                        </p>
+
+                        <div class="project-details">
+                            <p><strong>Location:</strong> Port Moresby / project site</p>
+                            <p><strong>Scope:</strong> Access point installation and wireless configuration</p>
+                            <p><strong>Purpose:</strong> Wireless network access</p>
+                        </div>
+
+                        <div class="technology-tags">
+                            <span>Wi-Fi</span>
+                            <span>Access Points</span>
+                            <span>Wireless Networking</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- IT SUPPORT PROJECT -->
+                <article class="project-card" data-category="it">
+
+                    <img src="images/projects/itsupport.jpg"
+                         alt="Computer installation and IT support"
+                         loading="lazy"
+                         class="project-image">
+
+                    <div class="project-info">
+                        <span class="project-category">IT Support</span>
+
+                        <h3>Computer Setup & Maintenance</h3>
+
+                        <p>
+                            Computer setup, software installation,
+                            troubleshooting and general technical support
+                            for home and business users.
+                        </p>
+
+                        <div class="project-details">
+                            <p><strong>Location:</strong> Port Moresby</p>
+                            <p><strong>Scope:</strong> Computer configuration, software setup and troubleshooting</p>
+                            <p><strong>Purpose:</strong> User and workstation support</p>
+                        </div>
+
+                        <div class="technology-tags">
+                            <span>Windows</span>
+                            <span>Computer Support</span>
+                            <span>Troubleshooting</span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- WEBSITE DEVELOPMENT PROJECT -->
+                <article class="project-card" data-category="website">
+
+                    <img src="images/projects/simple-tech-services.jpg"
+                         alt="Simple Tech Services business website developed by Niugini Tech"
+                         loading="lazy"
+                         class="project-image">
+
+                    <div class="project-info">
+                        <span class="project-category">Website Design & Development</span>
+
+                        <h3>Simple Tech Services Website</h3>
+
+                        <p>
+                            Designed and developed a responsive business
+                            website featuring service presentation,
+                            business information and mobile-friendly navigation.
+                        </p>
+
+                        <div class="project-details">
+                            <p><strong>Project:</strong> Simple Tech Services</p>
+                            <p><strong>Scope:</strong> Website structure, page design and responsive layout</p>
+                            <p><strong>Purpose:</strong> Business presence and service enquiries</p>
+                        </div>
+
+                        <div class="technology-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <a href="https://sts-chi-virid.vercel.app/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-link">
+                            Visit Live Website
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section class="light-section">
+        <div class="container">
+            <div class="section-heading projects-intro">
+
+                <span class="section-label">Where We Work</span>
+
+                <h2>Technology Support Across Papua New Guinea</h2>
+
+                <p>
+                    Based in Port Moresby, Niugini Tech provides technology
+                    installation and IT support services. Contact us to
+                    discuss your project location, technical requirements
+                    and service availability.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="projects-cta">
+        <div class="container">
+
+            <h2>Have a Project in Mind?</h2>
+
+            <p>
+                Need CCTV installation, Starlink setup, PTP wireless
+                connectivity, network cabling, Wi-Fi installation or
+                IT support? Contact Niugini Tech to discuss your
+                requirements and request a quote.
+            </p>
+
+            <a href="contact.html" class="btn btn-primary">
+                <i class="fas fa-envelope"></i>
+                Request a Quote
+            </a>
+
+            <a href="tel:+67571623719" class="btn call-button">
+                <i class="fas fa-phone"></i>
+                Call Now
+            </a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+<footer>
+    <div class="container footer-inner">
+
+        <span>
+            © <span id="year"></span>
+            <strong>Niugini Tech.</strong> All rights reserved.
+        </span>
+
+        <span>
+            Connecting Business Through Technology.
+        </span>
+
+    </div>
+</footer>
+
+    <!-- IMAGE LIGHTBOX -->
+    <div class="image-lightbox"
+         id="imageLightbox"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Expanded project image">
+
+        <button class="lightbox-close"
+                id="lightboxClose"
+                type="button"
+                aria-label="Close image">
+            &times;
+        </button>
+
+        <img src=""
+             alt="Expanded project image"
+             id="lightboxImage">
+    </div>
+
+    <!-- PROJECT PAGE SCRIPTS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            /* =========================
+               PROJECT FILTERS
+            ========================= */
+
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const projectCards = document.querySelectorAll(".project-card");
+
+            filterButtons.forEach(function (button) {
+
+                button.addEventListener("click", function () {
+
+                    const filter = button.dataset.filter;
+
+                    filterButtons.forEach(function (btn) {
+                        btn.classList.remove("active");
+                        btn.setAttribute("aria-pressed", "false");
+                    });
+
+                    button.classList.add("active");
+                    button.setAttribute("aria-pressed", "true");
+
+                    projectCards.forEach(function (card) {
+
+                        const category = card.dataset.category;
+
+                        card.hidden = (
+                            filter !== "all" && category !== filter
+                        );
+
+                    });
+
+                });
+
+            });
+
+            /* =========================
+               AUTOMATIC SLIDESHOWS
+            ========================= */
+
+            const reducedMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            if (!reducedMotion) {
+
+                document.querySelectorAll(".project-slideshow").forEach(
+                    function (slideshow) {
+
+                        const images = slideshow.querySelectorAll(".project-image");
+
+                        if (images.length < 2) return;
+
+                        let currentIndex = 0;
+
+                        setInterval(function () {
+
+                            images[currentIndex].classList.remove("active");
+
+                            currentIndex = (currentIndex + 1) % images.length;
+
+                            images[currentIndex].classList.add("active");
+
+                        }, 3000);
+
+                    }
+                );
+
+            }
+
+            /* =========================
+               IMAGE LIGHTBOX
+            ========================= */
+
+            const lightbox = document.getElementById("imageLightbox");
+            const lightboxImage = document.getElementById("lightboxImage");
+            const lightboxClose = document.getElementById("lightboxClose");
+
+            let previousFocus = null;
+
+            document.querySelectorAll(".project-image").forEach(function (image) {
+
+                image.addEventListener("click", function () {
+
+                    previousFocus = document.activeElement;
+
+                    lightboxImage.src = image.src;
+                    lightboxImage.alt = image.alt;
+
+                    lightbox.classList.add("open");
+                    document.body.classList.add("lightbox-open");
+
+                    lightboxClose.focus();
+
+                });
+
+            });
+
+            function closeLightbox() {
+
+                lightbox.classList.remove("open");
+                document.body.classList.remove("lightbox-open");
+
+                lightboxImage.src = "";
+
+                if (previousFocus) {
+                    previousFocus.focus();
+                }
+
+            }
+
+            lightboxClose.addEventListener("click", closeLightbox);
+
+            lightbox.addEventListener("click", function (event) {
+
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+
+            });
+
+            document.addEventListener("keydown", function (event) {
+
+                if (event.key === "Escape" && lightbox.classList.contains("open")) {
+                    closeLightbox();
+                }
+
+            });
+
+            /* =========================
+               AUTOMATIC COPYRIGHT YEAR
+            ========================= */
+
+            const yearElement = document.getElementById("current-year");
+
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+        });
+    </script>
+
+    <!-- SHARED JAVASCRIPT -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

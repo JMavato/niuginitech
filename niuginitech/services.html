@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IT Support, CCTV & Networking Services in Port Moresby | Niugini Tech</title>
+
+    <meta name="description" content="Niugini Tech is a PNG-owned technology services business providing IT support, CCTV installation, network installation, MikroTik configuration, business Wi-Fi and website development in Port Moresby and across Papua New Guinea.">
+
+    <meta name="keywords" content="IT Support Port Moresby, CCTV Installation Papua New Guinea, Network Installation PNG, Business Wi-Fi Solutions, MikroTik Configuration PNG, Website Design Papua New Guinea, Computer Repair Port Moresby">
+
+    <meta name="author" content="Niugini Tech">
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="IT Support, CCTV & Networking Services | Niugini Tech">
+    <meta property="og:description" content="Practical IT, networking, CCTV and digital solutions for homes and businesses in Papua New Guinea.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.png">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        .service-detail-grid,
+        .benefit-grid,
+        .package-grid,
+        .brand-grid,
+        .project-grid {
+            display: grid;
+            gap: 22px;
+        }
+
+        .service-detail-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .service-detail,
+        .package-card {
+            background: #fff;
+            border: 1px solid #e6edf2;
+            border-radius: 12px;
+            padding: 26px;
+            box-shadow: 0 8px 24px rgba(11, 60, 93, .06);
+        }
+
+        .service-detail h3,
+        .package-card h3 {
+            color: var(--navy, #0B3C5D);
+            margin: 12px 0;
+        }
+
+        .service-detail ul,
+        .package-card ul {
+            padding-left: 20px;
+        }
+
+        .service-detail li,
+        .package-card li {
+            margin: 7px 0;
+        }
+
+        .benefit-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 18px;
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #e6edf2;
+        }
+
+        .benefit-item i {
+            color: var(--secondary, #328CC1);
+            font-size: 20px;
+            margin-top: 3px;
+        }
+
+        .brand-grid {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+
+        .brand-item {
+            background: #fff;
+            border: 1px solid #e6edf2;
+            border-radius: 9px;
+            padding: 16px 10px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--navy, #0B3C5D);
+        }
+
+        .package-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .package-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-card ul {
+            flex: 1;
+        }
+
+        .package-card .btn {
+            align-self: flex-start;
+            margin-top: 12px;
+        }
+
+        .project-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .project-placeholder {
+            min-height: 220px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0B3C5D, #328CC1);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .project-placeholder img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .project-placeholder i {
+            font-size: 38px;
+        }
+
+        .projects-view-all {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .projects-view-all .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .services-intro {
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .service-note {
+            font-size: .92rem;
+            color: #64748b;
+            margin-top: 14px;
+            line-height: 1.6;
+        }
+
+        .location-card {
+            text-align: center;
+            padding: 25px;
+            background: #fff;
+            border: 1px solid #e6edf2;
+            border-radius: 12px;
+        }
+
+        .location-card i {
+            font-size: 30px;
+            color: var(--secondary, #328CC1);
+            margin-bottom: 12px;
+        }
+
+        .location-card h3 {
+            color: var(--navy, #0B3C5D);
+            margin-bottom: 8px;
+        }
+
+        .support-note {
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto 0;
+            color: #64748b;
+            font-size: .92rem;
+        }
+
+        .service-detail .card-icon,
+        .package-card .card-icon {
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 800px) {
+            .service-detail-grid,
+            .package-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .brand-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .benefit-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .service-detail-grid,
+            .package-grid,
+            .benefit-grid,
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brand-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+<div class="topbar">
+  <div class="container">
+
+    <div class="contact-info">
+      <span>
+        <i class="fas fa-phone"></i>
+        <a href="tel:+67571623719">+675 7162 3719</a>
+      </span>
+
+      <span>
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:info@niuginitech.com">info@niuginitech.com</a>
+      </span>
+    </div>
+
+    <span>
+      <i class="fas fa-location-dot"></i>
+      Port Moresby, Papua New Guinea
+    </span>
+
+  </div>
+</div>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar container">
+
+            <a class="brand" href="index.html">
+                <img src="images/logo.png"
+                     alt="Niugini Tech Logo"
+                     class="brand-logo">
+
+                <span>
+                    <span class="brand-name">
+                        NIUGINI <span>TECH</span>
+                    </span>
+
+                    <span class="brand-tagline">
+                        CONNECTING BUSINESS THROUGH TECHNOLOGY
+                    </span>
+                </span>
+            </a>
+
+            <button class="menu-toggle"
+                    aria-label="Toggle menu"
+                    aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a class="active" href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PAGE BANNER -->
+        <section class="page-banner">
+            <div class="container">
+
+                <span class="eyebrow">
+                    PRACTICAL TECHNOLOGY. REAL-WORLD SOLUTIONS.
+                </span>
+
+                <h1>Our Services</h1>
+
+                <p>
+                    Reliable IT, networking, security and digital solutions
+                    for homes, businesses and organisations across
+                    Papua New Guinea.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section>
+            <div class="container services-intro">
+
+                <span class="section-label">What We Do</span>
+
+                <div class="section-heading">
+                    <h2>Technology solutions built around your needs.</h2>
+
+                    <p>
+                        From everyday computer support to business connectivity,
+                        CCTV security and website services, Niugini Tech helps
+                        you choose practical solutions that fit your requirements
+                        and budget.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LOCATION & SERVICE COVERAGE -->
+        <section class="light-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Where We Operate</span>
+                    <h2>Your Local Technology Partner</h2>
+
+                    <p>
+                        Based in Port Moresby, Papua New Guinea, providing
+                        remote and onsite technology support to homes and
+                        businesses.
+                    </p>
+                </div>
+
+                <div class="benefit-grid">
+
+                    <div class="location-card">
+                        <i class="fas fa-location-dot"></i>
+                        <h3>Port Moresby</h3>
+                        <p>
+                            Based in Port Moresby, National Capital District.
+                        </p>
+                    </div>
+
+                    <div class="location-card">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Nationwide Enquiries</h3>
+                        <p>
+                            Project enquiries and service arrangements
+                            across Papua New Guinea.
+                        </p>
+                    </div>
+
+                    <div class="location-card">
+                        <i class="fas fa-laptop-house"></i>
+                        <h3>Remote & Onsite</h3>
+                        <p>
+                            Support options based on your location
+                            and service requirements.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MAIN SERVICES -->
+        <section class="light-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Our Expertise</span>
+                    <h2>Technology Services</h2>
+
+                    <p>
+                        Support and solutions for individuals, residential
+                        customers and businesses.
+                    </p>
+                </div>
+
+                <div class="service-detail-grid">
+
+                    <!-- IT SUPPORT -->
+                    <article class="service-detail">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+
+                        <h3>IT Support & Troubleshooting</h3>
+
+                        <p>
+                            Keep your computers and everyday technology
+                            working reliably with practical technical assistance.
+                        </p>
+
+                        <ul>
+                            <li>Desktop and laptop setup</li>
+                            <li>Software and operating system installation</li>
+                            <li>Computer diagnostics and troubleshooting</li>
+                            <li>Printer installation and configuration</li>
+                            <li>Basic virus and malware checks</li>
+                            <li>Microsoft 365 and general user support</li>
+                        </ul>
+                    </article>
+
+                    <!-- NETWORKING -->
+                    <article class="service-detail">
+                        <div class="card-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+
+                        <h3>Networking & Connectivity</h3>
+
+                        <p>
+                            Improve network coverage, connectivity and reliability
+                            at home or in your workplace.
+                        </p>
+
+                        <ul>
+                            <li>LAN setup and structured cabling</li>
+                            <li>Office and home Wi-Fi deployment</li>
+                            <li>Router and network switch configuration</li>
+                            <li>MikroTik and Ubiquiti configuration</li>
+                            <li>Point-to-point wireless links</li>
+                            <li>Network fault finding and optimisation</li>
+                        </ul>
+                    </article>
+
+                    <!-- CCTV -->
+                    <article class="service-detail">
+                        <div class="card-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+
+                        <h3>CCTV & Security Systems</h3>
+
+                        <p>
+                            Help protect your premises with properly planned,
+                            installed and configured surveillance systems.
+                        </p>
+
+                        <ul>
+                            <li>CCTV system supply and installation</li>
+                            <li>Camera positioning and configuration</li>
+                            <li>Hikvision and Dahua system support</li>
+                            <li>DVR/NVR setup and recording configuration</li>
+                            <li>Remote viewing on phones and computers</li>
+                            <li>Maintenance and troubleshooting</li>
+                        </ul>
+                    </article>
+
+                    <!-- WEBSITE -->
+                    <article class="service-detail">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+
+                        <h3>Website & Digital Solutions</h3>
+
+                        <p>
+                            Establish and maintain a professional online
+                            presence for your business or organisation.
+                        </p>
+
+                        <ul>
+                            <li>Website design and development</li>
+                            <li>Website setup, hosting and maintenance</li>
+                            <li>Domain name registration and renewal</li>
+                            <li>Business email setup and management</li>
+                            <li>Website updates and technical support</li>
+                            <li>Practical technology consulting</li>
+                        </ul>
+                    </article>
+
+                    <!-- IT EQUIPMENT -->
+                    <article class="service-detail">
+                        <div class="card-icon">
+                            <i class="fas fa-computer"></i>
+                        </div>
+
+                        <h3>Computers & IT Equipment</h3>
+
+                        <p>
+                            Source suitable technology equipment and accessories
+                            for personal and business use.
+                        </p>
+
+                        <ul>
+                            <li>Desktop and laptop sourcing</li>
+                            <li>Printers and computer accessories</li>
+                            <li>Routers, switches and Wi-Fi devices</li>
+                            <li>Networking and connectivity equipment</li>
+                            <li>Product recommendations and setup assistance</li>
+                        </ul>
+                    </article>
+
+                    <!-- BUSINESS SUPPORT -->
+                    <article class="service-detail">
+                        <div class="card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+
+                        <h3>Business IT Support</h3>
+
+                        <p>
+                            Practical technical support to help organisations
+                            maintain productive and dependable IT environments.
+                        </p>
+
+                        <ul>
+                            <li>Routine computer and IT maintenance</li>
+                            <li>Workstation and printer support</li>
+                            <li>Business network troubleshooting</li>
+                            <li>Email and user configuration assistance</li>
+                            <li>Technology advice and support planning</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGIES -->
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Technology Ecosystem</span>
+                    <h2>Technologies We Support</h2>
+
+                    <p>
+                        Our service capabilities include working with commonly
+                        used platforms, devices and technology solutions.
+                        Availability and project scope are confirmed during
+                        consultation.
+                    </p>
+                </div>
+
+                <div class="brand-grid">
+                    <div class="brand-item">Microsoft 365</div>
+                    <div class="brand-item">Google Workspace</div>
+                    <div class="brand-item">MikroTik</div>
+                    <div class="brand-item">Ubiquiti UniFi</div>
+                    <div class="brand-item">TP-Link</div>
+                    <div class="brand-item">Hikvision</div>
+                    <div class="brand-item">Dahua</div>
+                    <div class="brand-item">Yealink</div>
+                    <div class="brand-item">Windows 11</div>
+                    <div class="brand-item">Windows Server</div>
+                </div>
+
+                <p class="service-note">
+                    Brand names identify technologies and products that may
+                    be supported; they do not imply an authorised partnership
+                    or certification.
+                </p>
+
+                <p class="service-note">
+                    Our technical work includes practical experience with
+                    network configuration, wireless connectivity, CCTV systems,
+                    Microsoft 365 and computer support. Specific project
+                    capabilities are confirmed during consultation.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- CUSTOMER BENEFITS -->
+        <section class="light-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">The Value We Deliver</span>
+                    <h2>Solutions that make a difference.</h2>
+                </div>
+
+                <div class="benefit-grid">
+
+                    <div class="benefit-item">
+                        <i class="fas fa-wifi"></i>
+                        <div>
+                            <strong>Better Connectivity</strong>
+                            <p>Improve Wi-Fi coverage and network access.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-halved"></i>
+                        <div>
+                            <strong>Greater Security</strong>
+                            <p>Monitor your premises with configured CCTV systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                        <div>
+                            <strong>Less Downtime</strong>
+                            <p>Resolve common IT and network issues.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Professional Presence</strong>
+                            <p>Build your website and business email identity.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-coins"></i>
+                        <div>
+                            <strong>Practical Value</strong>
+                            <p>Choose solutions suited to your needs and budget.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <strong>Local Support</strong>
+                            <p>Get assistance from a PNG-owned technology business.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPPORT & RESPONSE -->
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Technical Assistance</span>
+                    <h2>Support When You Need It</h2>
+
+                    <p>
+                        We work with customers to assess technical issues
+                        and arrange suitable support.
+                    </p>
+                </div>
+
+                <div class="service-detail-grid">
+
+                    <article class="service-detail">
+                        <div class="card-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+
+                        <h3>Remote Technical Support</h3>
+
+                        <p>
+                            Remote assistance for supported IT, software,
+                            connectivity and configuration issues.
+                        </p>
+
+                        <ul>
+                            <li>Initial response target within 24 hours</li>
+                            <li>Remote troubleshooting where possible</li>
+                            <li>Computer and software assistance</li>
+                            <li>Network configuration support</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-detail">
+                        <div class="card-icon">
+                            <i class="fas fa-triangle-exclamation"></i>
+                        </div>
+
+                        <h3>Emergency Network Support</h3>
+
+                        <p>
+                            Priority assistance requests for critical
+                            business connectivity and security issues.
+                        </p>
+
+                        <ul>
+                            <li>Critical network and internet outages</li>
+                            <li>Business Wi-Fi connectivity issues</li>
+                            <li>CCTV system outages</li>
+                            <li>Priority assessment and support arrangements</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+                <p class="support-note">
+                    Response times are targets, not guaranteed restoration times.
+                    Actual response and onsite availability depend on the issue,
+                    location and support arrangements.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- SERVICE PACKAGES -->
+        <section class="light-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Simple Starting Points</span>
+                    <h2>Explore Our Service Packages</h2>
+
+                    <p>
+                        These are example service bundles. Final recommendations
+                        and pricing depend on your site, equipment and requirements.
+                    </p>
+                </div>
+
+                <div class="package-grid">
+
+                    <!-- HOME PACKAGE -->
+                    <article class="package-card">
+                        <div class="card-icon">
+                            <i class="fas fa-house-laptop"></i>
+                        </div>
+
+                        <h3>Home IT Package</h3>
+
+                        <p>
+                            Everyday technology setup and support for households.
+                        </p>
+
+                        <ul>
+                            <li>Complete Windows PC setup and configuration</li>
+                            <li>Home Wi-Fi configuration</li>
+                            <li>Printer installation and connection</li>
+                            <li>Microsoft 365 setup</li>
+                            <li>Basic cybersecurity checks</li>
+                            <li>Computer troubleshooting</li>
+                        </ul>
+
+                        <a class="btn btn-primary" href="contact.html">
+                            Enquire Now
+                        </a>
+                    </article>
+
+                    <!-- BUSINESS PACKAGE -->
+                    <article class="package-card">
+                        <div class="card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+
+                        <h3>Small Business Package</h3>
+
+                        <p>
+                            Core technology services to help your business operate.
+                        </p>
+
+                        <ul>
+                            <li>Business LAN and Wi-Fi setup</li>
+                            <li>Router and network switch configuration</li>
+                            <li>Business email setup</li>
+                            <li>Microsoft 365 user configuration</li>
+                            <li>Website and hosting assistance</li>
+                            <li>Routine IT maintenance support</li>
+                        </ul>
+
+                        <a class="btn btn-primary" href="contact.html">
+                            Enquire Now
+                        </a>
+                    </article>
+
+                    <!-- CCTV PACKAGE -->
+                    <article class="package-card">
+                        <div class="card-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+
+                        <h3>CCTV Security Package</h3>
+
+                        <p>
+                            Surveillance solutions planned around your premises.
+                        </p>
+
+                        <ul>
+                            <li>CCTV site assessment and planning</li>
+                            <li>Camera installation and positioning</li>
+                            <li>DVR/NVR configuration</li>
+                            <li>Mobile phone remote viewing setup</li>
+                            <li>Recording and storage configuration</li>
+                            <li>CCTV maintenance and troubleshooting</li>
+                        </ul>
+
+                        <a class="btn btn-primary" href="contact.html">
+                            Enquire Now
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT GALLERY -->
+        <section class="light-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Our Work</span>
+                    <h2>Project Gallery</h2>
+
+                    <p>
+                        Explore some of our installations and technology
+                        projects across Papua New Guinea.
+                    </p>
+                </div>
+
+                <div class="project-grid">
+
+                    <!-- CCTV INSTALLATIONS -->
+                    <div class="project-placeholder">
+                        <img src="images/projects/cctv.jpg"
+                             alt="CCTV installation project"
+                             loading="lazy">
+
+                        <strong>CCTV Installations</strong>
+                        <span>
+                            Professional CCTV installation and configuration
+                        </span>
+                    </div>
+
+                    <!-- NETWORKING & CABLING -->
+                    <div class="project-placeholder">
+                        <img src="images/projects/netcab.jpg"
+                             alt="Networking and structured cabling project"
+                             loading="lazy">
+
+                        <strong>Networking &amp; Cabling</strong>
+                        <span>
+                            Network installation and structured cabling
+                        </span>
+                    </div>
+
+                    <!-- WIRELESS CONNECTIVITY -->
+                    <div class="project-placeholder">
+                        <img src="images/projects/wireless.jpg"
+                             alt="Wireless connectivity project"
+                             loading="lazy">
+
+                        <strong>Wireless Connectivity</strong>
+                        <span>
+                            Wi-Fi access points and wireless network solutions
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- VIEW ALL PROJECTS -->
+                <div class="projects-view-all">
+                    <a href="projects.html" class="btn btn-primary">
+                        View All Projects
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Why Niugini Tech</span>
+                    <h2>Your Local Technology Partner.</h2>
+                </div>
+
+                <div class="benefit-grid">
+
+                    <div class="benefit-item">
+                        <i class="fas fa-flag"></i>
+                        <div>
+                            <strong>PNG-Owned Business</strong>
+                            <p>Locally owned technology services business.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <strong>Local Technical Support</strong>
+                            <p>Practical assistance for homes and businesses.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-wallet"></i>
+                        <div>
+                            <strong>Affordable Solutions</strong>
+                            <p>Recommendations suited to your requirements and budget.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <strong>Business & Residential Services</strong>
+                            <p>Technology services for individuals and organisations.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                        <div>
+                            <strong>Ongoing Maintenance</strong>
+                            <p>Maintenance and troubleshooting support options.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <strong>Remote & Onsite Assistance</strong>
+                            <p>Flexible support depending on service requirements.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="final-cta">
+            <div class="container">
+
+                <span class="eyebrow">
+                    LET'S GET YOUR PROJECT STARTED
+                </span>
+
+                <h2>Need a Technology Solution?</h2>
+
+                <p>
+                    Tell us what you need. We can discuss your requirements
+                    and recommend a suitable solution.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a class="btn btn-primary" href="contact.html">
+                        Request a Free Quote
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a class="btn call-button" href="tel:+67571623719">
+                        <i class="fas fa-phone"></i>
+                        Call +675 7162 3719
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-inner">
+
+            <span>
+                © <span id="year"></span>
+                <strong>Niugini Tech.</strong> All rights reserved.
+            </span>
+
+            <span>
+                Connecting Business Through Technology.
+            </span>
+
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
