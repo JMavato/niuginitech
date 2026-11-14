@@ -17,12 +17,17 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--dark);
   line-height: 1.7;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -40,30 +45,43 @@ a { text-decoration: none; color: inherit; }
 }
 
 .topbar .container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 25px;
-    flex-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .topbar .contact-info {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .topbar .container > span {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-left: 650px;
-    white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.topbar i { color: var(--gold); margin-right: 7px; }
+.topbar i {
+  color: var(--gold);
+  margin-right: 7px;
+}
 
+@media (max-width: 768px) {
+  .topbar .container {
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .topbar .contact-info {
+    justify-content: center;
+    gap: 12px;
+  }
+}
 header {
   background: white;
   position: sticky;
